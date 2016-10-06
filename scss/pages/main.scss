@@ -1,0 +1,93 @@
+h2{
+	color: black;
+}
+
+
+
+.gallery {
+	padding: 30px 0 40px 0;
+	background: $grey-background-color;
+}
+
+.photo{
+	@include size(375px,210px);
+	@include photoSet;
+	vertical-align: middle;
+	max-width: 100%;
+	margin: 15px auto;
+	opacity: 0.8;
+	transform: scale(1);
+	transition: opacity .3s,transform .3s;
+	@include breakpoint(medium down) {
+ 					 
+	       			}
+	@include breakpoint(medium only) {
+ 					@include size(575px,310px);
+	       			}
+	&:hover{
+		opacity: 1;
+		transform: scale(1.1);
+	}
+
+}
+
+.first-photo{
+	background-image: url("../img/obrazek1.jpg");
+	&:hover{
+		background-image: url("../img/obrazek_z_ramka_rozmyta1.jpg");
+	}
+	&:active{
+		background-image: url("../img/obrazek_z_ramka1.jpg");
+	}
+}
+
+.second-photo{
+	background-image: url("../img/obrazek2.jpg");
+	&:hover{
+		background-image: url("../img/obrazek_z_ramka_rozmyta2.jpg");
+	}
+	&:active{
+		background-image: url("../img/obrazek_z_ramka2.jpg");
+	}
+}
+
+.third-photo{
+	background-image: url("../img/obrazek3.jpg");
+	&:hover{
+		background-image: url("../img/obrazek_z_ramka_rozmyta3.jpg");
+	}
+	&:active{
+		background-image: url("../img/obrazek_z_ramka3.jpg");
+	}
+}
+
+.fourth-photo{
+	background-image: url("../img/obrazek4.jpg");
+	&:hover{
+		background-image: url("../img/obrazek_z_ramka_rozmyta4.jpg");
+	}
+	&:active{
+		background-image: url("../img/obrazek_z_ramka4.jpg");
+	}
+}
+
+.fifth-photo{
+	background-image: url("../img/obrazek7.jpg");
+	&:hover{
+		background-image: url("../img/obrazek_z_ramka_rozmyta7.jpg");
+	}
+	&:active{
+		background-image: url("../img/obrazek_z_ramka7.jpg");
+	}
+}
+
+.sixth-photo{
+	background-image: url("../img/obrazek6.jpg");
+	&:hover{
+		background-image: url("../img/obrazek_z_ramka_rozmyta6.jpg");
+	}
+	&:active{
+		background-image: url("../img/obrazek_z_ramka6.jpg");
+	}
+}
+
