@@ -37,9 +37,9 @@
 }
 
 //niebieska nakładka
-@mixin blue-flap($width){
+@mixin red-flap($width){
 	content: "";
-	background: none repeat 0 0 rgba(19, 189, 210, 1);
+	background: none repeat 0 0 rgba(190, 42, 52, 0.5);
 	z-index: 0;
 	top: 0;
 	right: 0;

@@ -6,29 +6,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foundation for Sites</title>
     <link rel="stylesheet" href="css/app.css">
+    <!-- font awsome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
   </head>
   <body>
-    
-    <section class="gallery">
+        <nav class="navleft">
+          <ul>
+            <li><a href=""><i class="fa fa-home" aria-hidden="true"></i></a></li>
+            <li><a href=""><i class="fa fa-code" aria-hidden="true"></i></a></li>
+            <li><a href="#heart" class="heart-wrapper"><i class="fa fa-heart-o" aria-hidden="true"></i></a></li>
+            <li><a href="#gallery"><i class="fa fa-camera" aria-hidden="true"></i></a></li>
+            <li><a href="#contact"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
+          </ul>
+        </nav>
+    <section class="code-section" id="code">
       <div class="row">
+        <div class="small-12 columns">
+          <div><i class="fa fa-code" aria-hidden="true"></i></div>
+          <div><a href="" target="_blank">Zobacz kod CSS</a></div>
+          <div><a href="" target="_blank">Zobacz kod HTML</a></div>
+          <div><a href="" target="_blank">Zobacz kod JavaScript</a></div>
+        </div>
+      </div>
+    </section>
+    <section class="heart-section" id="heart">
+      <div class="row">
+        <div class="small-12 columns">
+          <i class="fa fa-heart-o" aria-hidden="true"></i>
+        </div>
+      </div>
+    </section>
+    <section class="gallery clearfix" id="gallery">
+      <div class="row float-right">
         <div class="large-12 columns">
-          <div class="title">
-            <h2>Galeria fotografii</h2>
-          </div>
-          <div class="row">
+          <div class="row ">
             <!-- pojedyńczy obraz -->
             <div class="small-12 large-4 columns">
               <div class="first-photo photo" >
+                <div class="photo-hover">
+                  <div class="photo-hover-inner">
+                    <h3>Photo 1</h3>
+                    <p><i class="fa fa-picture-o" aria-hidden="true"></i></p>
+                  </div>
+                </div>
               </div>
             </div>
             <!-- pojedyńczy obraz -->
             <div class="small-12 large-4  columns">
               <div class="second-photo photo">
+                <div class="photo-hover">
+                  <div class="photo-hover-inner">
+                  </div>
+                </div>
               </div>
             </div>
             <!-- pojedyńczy obraz -->
              <div class="small-12 large-4 columns">
               <div class="third-photo photo">
+                <div class="photo-hover">
+                  <div class="photo-hover-inner">
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -36,16 +74,28 @@
             <!-- pojedyńczy obraz -->
             <div class="small-12 large-4 columns">
               <div class="fourth-photo photo" >
+                <div class="photo-hover">
+                  <div class="photo-hover-inner">
+                  </div>
+                </div>
               </div>
             </div>
             <!-- pojedyńczy obraz -->
             <div class="small-12 large-4 columns">
               <div class="fifth-photo photo">
+                <div class="photo-hover">
+                  <div class="photo-hover-inner">
+                  </div>
+                </div>
               </div>
             </div>
             <!-- pojedyńczy obraz -->
              <div class="small-12 large-4 columns">
               <div class="sixth-photo photo">
+                <div class="photo-hover">
+                  <div class="photo-hover-inner">
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -53,7 +103,18 @@
         </div>
       </div>
     </section>
-
+    <!-- sekcja paralax kontakt -->
+    <section class="contact-section" id="contact">
+      <div class="contact-section-inner">
+        <div class="container">
+          <div class="contact-content">
+            <p><i class="fa fa-envelope-o" aria-hidden="true"></i></p>  
+            <p class="contact-phone">+48 888 937 770</p>
+            <p class="contact-email">katarzyna.kwiatkowska25@vp.pl</p>
+          </div>
+        </div>
+      </div>
+    </section>
    
       
        
