@@ -5,6 +5,11 @@ h2{
 .fa-heart-o{
 	animation: beat 1s infinite;
 	}
+.heart-section{
+	animation: backgroundSet 12s;
+}
+	
+
 
 //przycisk
  @mixin elementaryButton{
@@ -19,8 +24,17 @@ h2{
 	margin: 6px 0;
 	padding: 10px 30px;
 	border: 2px solid $main-color;
-	border-radius: 2px;
-}	
+	
+}
+
+	
+
+ @mixin elementaryButtonHover{
+ 	color: $white-color;
+	background: linear-gradient($main-color, $light-beetroot-color);
+ }
+
+
 
 .navleft{
 	z-index: 99;
@@ -57,33 +71,62 @@ h2{
  						line-height: 50px;
  						font-size: 20px;
 	       			}		
-				}	
+				}
+
 				
 			}
-			.heart-wrapper{
-					
-
-				}	
+			
 		}
 	}
 }
 
 .code-section{
-	padding: 211px 0;
-	i{
-		color: $main-color;
-		font-size: 70px;
-		margin-bottom: 20px;
+	padding: 60px 0 40px;
+	.icon-wrapper{
+	background: $light-beetroot-color;
+    background: -webkit-linear-gradient(red, yellow); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(red, yellow); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient($light-beetroot-color, $main-color); /* For Firefox 3.6 to 15 */
+    background: linear-gradient($light-beetroot-color 50%, $main-color); /* Standard syntax */
+		border-radius: 50%;
+		@include size(20rem,20rem);
+		margin: 20px auto;
+		@include rwd;
+		i{
+			color: $white-color;
+			font-size: 120px;
+			margin-bottom: 20px;
+			line-height: 20rem;
+			animation: gitIconResize 2s infinite;
+		}
 	}
 	div{
 		a{
 			@include elementaryButton;
 			&:hover{
-				color: $white-color;
-				background: $main-color;
+				@include elementaryButtonHover;
 			}
 		}
 	}
+	.arrow-container{
+		padding-top: 190px;
+		a{
+			&:hover{
+				@include elementaryButtonHover;
+			}
+		}
+		.arrow-wrapper{ 
+				overflow: auto;
+				display: inline-block;
+				border-radius:50%;
+				@include elementaryButton;
+				padding: 10px 22px;
+				i{
+					font-size: 55px;
+					}
+				}
+		
+	}	
 
 }
 .heart-section{
@@ -93,38 +136,75 @@ h2{
 		font-size: 185px;
 		color: $white-color;
 	}
+	.arrow-container{
+		padding-top: 190px;
+		a{
+			&:hover{
+				@include elementaryButtonHover;
+			}
+		  	i{
+		  		font-size: 55px;
+		  		color: $main-color;
+		  	}
+		}
+		
+	}
+}
+@keyframes gitIconResize{
+	0%{
+		font-size: 120px;
+		
+	}
+	50%{
+		font-size: 160px;
+		color: pink;
+		
+	}
+	100%{
+		font-size: 200px;
+		
+	}
+}
+@keyframes backgroundSet{
+	0%{
+		background: $light-beetroot-color;
+	}
+
+	100%{
+		background:$main-color; 
+	}
 }
 @keyframes beat{
 
 0% {
-    -webkit-transform: scale(1.7);
-    -moz-transform: scale(1.7);
+    -webkit-transform: scale(2);
+    -moz-transform: scale(2);
+    -ms-transform: scale(2);
+    -o-transform: scale(2);
+    transform: scale(2);
+}
+30% {
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
     -ms-transform: scale(1.2);
     -o-transform: scale(1.2);
     transform: scale(1.2);
-}
-20% {
-    -webkit-transform: scale(0.9);
-    -moz-transform: scale(0.9);
-    -ms-transform: scale(0.9);
-    -o-transform: scale(0.9);
-    transform: scale(0.9);
     color: #f6737c;
 }
-21% {
-    -webkit-transform: scale(1.7);
-    -moz-transform: scale(1.7);
-    -ms-transform: scale(1.2);
-    -o-transform: scale(1.2);
-    transform: scale(1.2);
+31% {
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    transform: scale(1.5);
     color: #f52331;
 }
 100% {
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
     color: #f6525e;
 }
 
@@ -144,8 +224,7 @@ h2{
 .photo{
 	@include size(375px,210px);
 	@include photoSet;
-	vertical-align: middle;
-	max-width: 100%;
+	@include rwd;
 	margin: 15px auto ;
 	opacity: 0.8;
 	transform: scale(1);
@@ -160,16 +239,12 @@ h2{
 	@include breakpoint(medium only) {
  					@include size(575px,310px);
 	       			}
-	@include breakpoint(small only) {
- 				float: right;
-	       			}
 	&:hover{
 		opacity: 1;
 		transform: scale(1.1);
-		//@include red-flap(100%);
 	}
 	&:hover .photo-hover{
-		opacity: 0.9;
+		opacity: 0.7;
 	}
 
 }
@@ -183,6 +258,15 @@ h2{
 	overflow: hidden;
 	background-color: $main-color;
 	opacity: 0;
+	.photo-hover-inner{
+		@include centerVertical;
+		p{
+			font-size: 20px;
+			i{
+				font-size: 50px;
+			}
+		}
+	}
 }
 
 .first-photo{
@@ -271,4 +355,50 @@ h2{
  		}
 	}
 }
+
+.contact-section-2{
+	position: relative;
+	width: 100%;
+
+	//min-width: 31.5rem;
+	#contact-section-inner-2{
+		
+		position: absolute;
+		width: 100%;
+		height: auto;
+		padding-top: 31.25%;
+		background-color: red;//transparent;
+		overflow: hidden;
+		clip: rect(0,auto,auto,0);
+		
+ 		&:after{
+ 			//@include red-flap(100%);
+ 		}
+		#container-2{
+	
+			    position: fixed;
+			    bottom: 0;
+			    width: 100%;
+			    min-width: 976px;
+			    //min-width: 31.5rem;
+			    -webkit-filter: blur(8px);
+			    //-moz-filter: blur(8px);
+			    -o-filter: blur(8px);
+			    -ms-filter: blur(8px);
+			    //filter: blur(8px);
+			    background: url('../img/photo-background.jpg');
+			    p{
+			    	font-size: 40px;
+			    	
+			    }
+			    .contact-content-2{
+			    	-webkit-filter: blur(0px);
+			    //-moz-filter: blur(8px);
+			    -o-filter: blur(0px);
+			    -ms-filter: blur(0px);
+			    }
+			}
+				
+		}
+	}
 
